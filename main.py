@@ -7,7 +7,7 @@ import base64
 
 END_MARKER="#####END#####"
 
-set_website_title("Emma's test Website")
+set_website_title("Emma's test Website"),
 set_site_information(
     author="Emma Hudak"
     description="This website allows users to encode a secret message in an image (PNG), then later allows then to decode the same image to find said message"
