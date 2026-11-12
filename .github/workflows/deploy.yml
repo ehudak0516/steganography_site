@@ -174,7 +174,7 @@ jobs:
           # Keep the course dashboard reachable from Drafter's generated
           # auxiliary links without coupling the dashboard to the build itself.
           DRAFTER_RUN+=(
-            --external-pages "dashboard/" "Dashboard"
+            --external-pages "https://ehudak0516.github.io/steganography_site/dashboard/" "Dashboard"
             --external-pages "${{ github.server_url }}/${{ github.repository }}" "Repository"
           )
 
