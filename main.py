@@ -15,7 +15,8 @@ set_site_information(
     planning="",
     links=["https://github.com/ehudak0516/steganography_site"]
     )
-
+add_website_css("body", "font-family: Georgia, serif; background-color: #f0f4ff;")
+add_website_css("button", "background-color:darkblue; color: white; font-family: Geogia, serif;")
 
 @dataclass
 class EncodeRecord:
