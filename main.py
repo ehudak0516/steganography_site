@@ -97,6 +97,7 @@ def decode_message(img:Image.Image)->str:
 
 @route
 def index(state:State)->Page:
+    """Home page: shows the title and buttons to to every other page."""
     return Page(state,[
         Header("Image Message Hider"),
         "Hide a secret message inside a PNG image, or reveal one.",
@@ -109,6 +110,7 @@ def index(state:State)->Page:
 
 @route
 def encode_page(state: State)-> Page:
+    """Form page: upload a PNG, type a secret message, and choose whether to save it to history."""
     return Page(state, [
         Header("Encode"),
         "Upload a PNG and type the message to hide.",
@@ -127,6 +129,7 @@ def encode_page(state: State)-> Page:
 @route
 def encode_result(state:State, image_file: bytes, message: str,
                   label:str, save_history: bool)-> Page:
+                      """Validate the PNG and message, hide the message in the image, and offer the encoded PNG for download."""
     state.error=""
     state.encoded_png=""
     
@@ -175,6 +178,7 @@ def encode_result(state:State, image_file: bytes, message: str,
     
 @route
 def decode_page(state: State)->Page:
+    """Form page: upload a PNG to check for a hidden message."""
     return Page(state, [
         Header("Decode"),
         "Upload a PNG that has a hidden message.",
@@ -186,6 +190,7 @@ def decode_page(state: State)->Page:
 
 @route
 def decode_result(state:State, image_file: bytes)->Page:
+    """Read the upload PNG and show the hidden message, or an error if none is found."""
     state.error=""
     state.decoded_message=""
     
@@ -213,6 +218,7 @@ def decode_result(state:State, image_file: bytes)->Page:
     
 @route
 def history_page(state:State)->Page:
+    """Show every aved encoding with its label, message length, and capacity used."""
     content=[Header("Encoding History")]
     if len(state.history)==0:
         content.append("No encodings saved yet.")
@@ -228,6 +234,7 @@ def history_page(state:State)->Page:
         
 @route
 def how_it_works(state:State)->Page:
+    """Explain how LSB steganography hides a message in an image."""
     return Page(state, [
         Header("How It Works"),
         "Every pixel has red, green, and blue values (0-255).",
