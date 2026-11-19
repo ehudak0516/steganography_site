@@ -234,7 +234,7 @@ def history_page(state:State)->Page:
         
 @route
 def how_it_works(state:State)->Page:
-    """Explain how LSB steganography hides a message in an image."""
+    """Explains how LSB steganography hides a message in an image."""
     return Page(state, [
         Header("How It Works"),
         "Every pixel has red, green, and blue values (0-255).",
